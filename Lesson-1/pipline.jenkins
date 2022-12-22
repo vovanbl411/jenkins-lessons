@@ -25,21 +25,21 @@ pipeline{
     }
     stage("Build docker image"){
         steps{
-                sh 'docker build -t vovanbl411/jenkins-image:0.2 .'
+                sh 'docker build -t vovanbl411/jenkins-image:0.3 .'
         }
     }
     stage("Push docker image to DockerHub"){
         steps{
             withDockerRegistry(credentialsId: 'dockerhub-cred-vovanbl411', url: 'https://index.docker.io/v1/'){
                 sh '''
-                    docker push vovanbl411/jenkins-image:0.2
+                    docker push vovanbl411/jenkins-image:0.3
                 ''' 
             }
         }
     }
     stage("Delete docker image locally"){
         steps{
-            sh 'docker rmi vovanbl411/jenkins-image:0.2'
+            sh 'docker rmi vovanbl411/jenkins-image:0.3'
         }
     }
     } 
