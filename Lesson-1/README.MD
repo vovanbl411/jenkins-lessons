@@ -1,0 +1,1 @@
+Pipeline-jenkins communicate with docker-hub
