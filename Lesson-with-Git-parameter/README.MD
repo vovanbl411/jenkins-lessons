@@ -1,0 +1,1 @@
+Test jenkins-pipeline with Git-Parameter
